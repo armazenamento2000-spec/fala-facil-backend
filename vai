@@ -1,5 +1,1 @@
-gh auth login
-gh repo view armazenamento2000-spec/fala-facil-backend
-gh repo clone armazenamento2000-spec/fala-facil-backend
-cd fala-facil-backend
-git status --short --branch
+
