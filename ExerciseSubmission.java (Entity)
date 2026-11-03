@@ -1,0 +1,43 @@
+package com.falafacil.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "exercise_submissions", indexes = {
+    @Index(name = "idx_user_exercise", columnList = "user_id,exercise_id"),
+    @Index(name = "idx_submitted_at", columnList = "submitted_at")
+})
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ExerciseSubmission {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "exercise_id", nullable = false)
+    private Exercise exercise;
+
+    @Column(columnDefinition = "TEXT")
+    private String submittedAnswer;
+
+    @Column(name = "is_correct")
+    private boolean correct;
+
+    @Column(name = "submitted_at")
+    private LocalDateTime submittedAt;
+
+    @PrePersist
+    private void prePersist() {
+        this.submittedAt = LocalDateTime.now();
+    }
+}
