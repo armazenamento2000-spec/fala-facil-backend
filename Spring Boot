@@ -1,0 +1,51 @@
+fala-facil-backend/
+├── src/
+│   ├── main/
+│   │   ├── java/com/falafacil/
+│   │   │   ├── controller/
+│   │   │   │   ├── AuthController.java
+│   │   │   │   ├── ExerciseController.java
+│   │   │   │   ├── UserController.java
+│   │   │   │   └── CourseController.java
+│   │   │   ├── service/
+│   │   │   │   ├── AuthService.java
+│   │   │   │   ├── ExerciseService.java
+│   │   │   │   ├── UserService.java
+│   │   │   │   ├── TokenBlacklistService.java
+│   │   │   │   └── JwtTokenProvider.java
+│   │   │   ├── repository/
+│   │   │   │   ├── UserRepository.java
+│   │   │   │   ├── ExerciseRepository.java
+│   │   │   │   └── CourseRepository.java
+│   │   │   ├── entity/
+│   │   │   │   ├── User.java
+│   │   │   │   ├── Exercise.java
+│   │   │   │   ├── Course.java
+│   │   │   │   └── ExerciseSubmission.java
+│   │   │   ├── dto/
+│   │   │   │   ├── ExerciseSubmitRequest.java
+│   │   │   │   ├── LoginRequest.java
+│   │   │   │   ├── UserResponse.java
+│   │   │   │   └── ApiResponse.java
+│   │   │   ├── config/
+│   │   │   │   ├── SecurityConfig.java
+│   │   │   │   ├── CorsConfig.java
+│   │   │   │   ├── RateLimiterConfig.java
+│   │   │   │   └── JwtConfig.java
+│   │   │   ├── exception/
+│   │   │   │   ├── GlobalExceptionHandler.java
+│   │   │   │   ├── ApiErrorResponse.java
+│   │   │   │   └── CustomException.java
+│   │   │   └── FalaFacilApplication.java
+│   │   └── resources/
+│   │       ├── application.yml
+│   │       ├── application-dev.yml
+│   │       ├── application-prod.yml
+│   │       └── logback-spring.xml
+│   └── test/
+│       └── java/com/falafacil/
+│           └── ExerciseServiceTest.java
+├── pom.xml
+├── .gitignore
+├── README.md
+└── docker-compose.yml
